@@ -27,7 +27,44 @@ main {
 img {
   display: block;
   max-width: 100%;
-  border-radius: 0.5rem;
+}
+
+.image-wrapper {
+position: relative;
+border-radius: 0.75rem;
+overflow: hidden;
+cursor: pointer;
+}
+
+.card-image {
+    width: 100%;
+}
+
+.view-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.image-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: hsla(178, 100%, 50%, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-wrapper:hover::before {
+    opacity: 1;
+}
+
+.image-wrapper:hover .view-icon {
+    opacity: 1;
 }
 
 .card {
@@ -36,9 +73,15 @@ img {
 
 h1 {
     color:  hsl(0, 0%, 100%);
-    font-weight: 400;
+    font-weight: 600;
     margin: 1.25rem 0;
     font-size: 1.25rem;
+    cursor: pointer;
+    transition: color 0.3 ease;
+}
+
+h1:hover {
+    color: hsl(178, 100%, 50%);
 }
 
 p {
@@ -51,7 +94,6 @@ p {
     border: none;
     height: 1px;
     background-color:  hsl(215, 32%, 27%);
-    margin: rem 0;
 }
 
 .info-row {
@@ -84,4 +126,10 @@ p {
 
 .name {
     color: hsl(0, 0%, 100%);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.name:hover {
+    color: hsl(178, 100%, 50%);
 }
