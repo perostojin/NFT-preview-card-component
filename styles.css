@@ -91,7 +91,7 @@ p {
 
 .divider {
     border: none;
-    height: 1px;
+    height: 0.07rem;
     background-color:  hsl(215, 32%, 27%);
 }
 
@@ -134,7 +134,10 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    * {
-        transition: none !important;
-    }
+  .view-icon,
+  .image-wrapper::before,
+  h1,
+  .name {
+    transition: none;
+  }
 }
